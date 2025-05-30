@@ -1,10 +1,18 @@
-import { Navbar } from "../page";
+import Navbar from "../components/navbar";
+import { BodyPadding } from "../Global/Styling";
+
+export const metadata = {
+  title: "Input Page",
+};
+
 export default function InputPage() {
   return (
-    <div>
+    <div className="">
       <Navbar />
 
-      <div className="grid grid-cols-2 gap-4 p-4">
+      <div
+        className={`grid grid-cols-2 gap-4 p-4 dark:text-gray-100 dark:border-gray-700 ${BodyPadding}`}
+      >
         <input type="calendar" />
         <input type="date" />
         <input type="datetime-local" />

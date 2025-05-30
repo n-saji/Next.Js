@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Demo Next.js",
+  title: "Next App",
   keywords: ["Next.js", "React", "Demo"],
   authors: [
     {
@@ -33,9 +33,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-gray-950`}
       >
-        {children}
+        <div className="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-950">
+          <main className="flex-grow">{children}</main>
+          <footer className="bg-gray-800 text-white p-1 text-center">
+            © 2025 Nikhil Saji
+          </footer>
+        </div>
       </body>
     </html>
   );
