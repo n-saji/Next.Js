@@ -1,13 +1,39 @@
 import Navbar from "./components/navbar";
-import { ClickButton } from "./components/click";
-import { BodyPadding } from "./Global/Styling";
+import { ClickButton } from "./components/button";
+import {
+  BodyPadding,
+  CancelButton,
+  DeleteButton,
+  EditButton,
+  SaveButton,
+} from "./Global/Styling";
 
 export default function Home() {
   return (
     <div className="">
       <Navbar />
-      <main className={BodyPadding}>
-        <ClickButton />
+      <main className={`${BodyPadding} w-full flex`}>
+        <div className="flex w-full lg:w-1/4 justify-between items-center">
+          <ClickButton props={{ text: "Cancel", styling: CancelButton }} />
+          <ClickButton
+            props={{
+              text: "Edit",
+              styling: EditButton,
+            }}
+          />
+          <ClickButton
+            props={{
+              text: "Delete",
+              styling: DeleteButton,
+            }}
+          />
+          <ClickButton
+            props={{
+              text: "Save",
+              styling: SaveButton,
+            }}
+          />
+        </div>
       </main>
     </div>
   );

@@ -35,7 +35,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-gray-950`}
       >
-        <div className="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-950">
+        <div className="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-900">
           <main className="flex-grow">{children}</main>
           <footer className="bg-gray-800 text-white p-1 text-center">
             © 2025 Nikhil Saji

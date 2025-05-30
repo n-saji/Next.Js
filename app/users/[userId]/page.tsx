@@ -1,5 +1,6 @@
+import { ClickButton } from "@/app/components/button";
 import Navbar from "@/app/components/navbar";
-import { BodyPadding } from "@/app/Global/Styling";
+import { BodyPadding, DeleteButton } from "@/app/Global/Styling";
 import { Metadata } from "next";
 
 type Props = {
@@ -7,7 +8,9 @@ type Props = {
 };
 
 // imp same name - generateMetadata
-export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
   const id = (await params).userId;
   return {
     title: `User Data Page - ${id}`,
@@ -28,6 +31,13 @@ export default async function ShowUsersData({ params }: Props) {
         <p className="text-lg dark:text-gray-200  ">
           This is the user data page for user with ID: {userId}
         </p>
+        <ClickButton
+          props={{
+            text: "Delete User",
+            redirect: "/users",
+            styling: DeleteButton,
+          }}
+        />
       </div>
     </div>
   );
