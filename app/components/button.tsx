@@ -4,16 +4,19 @@ import { NormalButton } from "../Global/Styling";
 export function ClickButton({
   props,
 }: {
-  props: { text?: string; redirect?: string; styling?: string | undefined };
+  props: {
+    text?: string;
+    redirect?: string;
+    styling?: string | undefined;
+    alertMessage?: string | undefined;
+  };
 }) {
   const router = useRouter();
 
   const handleClick = () => {
+    alert(props.alertMessage || "Button clicked!");
     if (props.redirect) {
-      alert(`Success!`);
       router.push(props.redirect);
-    } else {
-      alert("Button clicked!");
     }
   };
 

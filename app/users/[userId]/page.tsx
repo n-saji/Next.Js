@@ -36,6 +36,7 @@ export default async function ShowUsersData({ params }: Props) {
             text: "Delete User",
             redirect: "/users",
             styling: DeleteButton,
+            alertMessage: "Are you sure you want to delete this user?",
           }}
         />
       </div>

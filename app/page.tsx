@@ -8,7 +8,7 @@ import {
   SaveButton,
 } from "./Global/Styling";
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="">
       <Navbar />
@@ -25,6 +25,7 @@ export default function Home() {
             props={{
               text: "Delete",
               styling: DeleteButton,
+              alertMessage: "Are you sure you want to delete this?",
             }}
           />
           <ClickButton

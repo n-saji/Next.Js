@@ -7,12 +7,28 @@ export const metadata = {
   title: "Users Page",
 };
 
-export default function Users() {
+export default async function Users() {
+  // Simulating an error condition
+  let num = Math.random();
+  console.log("Random number generated:", num);
+  if (num < 0.5) {
+    throw new Error("An error occurred while fetching users data");
+  }
+
+  // Simulating a delay to mimic data fetching or processing
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Data fetched successfully");
+    }, 1000);
+  });
+
   return (
     <div className="">
       <Navbar />
 
-      <div className={`flex flex-col items-center justify-center w-full ${BodyPadding}`}>
+      <div
+        className={`flex flex-col items-center justify-center w-full ${BodyPadding}`}
+      >
         <h1 className="text-4xl font-bold mb-4 dark:text-gray-100">
           Users Page
         </h1>
