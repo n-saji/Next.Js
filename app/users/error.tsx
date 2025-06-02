@@ -3,7 +3,6 @@
 import { startTransition } from "react";
 import Navbar from "../components/navbar";
 import { useRouter } from "next/navigation";
-import { ClickButton } from "../components/button";
 import { DangerButton } from "../Global/Styling";
 
 export default function HandleUserError({
