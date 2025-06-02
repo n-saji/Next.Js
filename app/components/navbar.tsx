@@ -13,6 +13,9 @@ export default function Navbar() {
           <Link href="/input" className="hover:text-blue-500">
             Input
           </Link>
+          <Link href="/styling" className="hover:text-blue-500">
+            Styling
+          </Link>
         </div>
       </div>
     </nav>

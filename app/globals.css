@@ -4,3 +4,47 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+
+
+@layer components {
+  .animated-gradient-border {
+    position: relative;
+    padding: 1rem; /* adjust as needed */
+    border-radius: 0.75rem; /* rounded-lg */
+    background: linear-gradient(270deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+    background-size: 600% 600%;
+    animation: borderMove 3s ease infinite;
+
+    /* Optional inner content styling */
+    color: white;
+    z-index: 1;
+  }
+
+  .animated-gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px; /* border thickness */
+    background: inherit;
+    border-radius: inherit;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+
+  @keyframes borderMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+

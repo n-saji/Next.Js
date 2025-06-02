@@ -9,18 +9,18 @@ export const metadata = {
 
 export default async function Users() {
   // Simulating an error condition
-  let num = Math.random();
-  console.log("Random number generated:", num);
-  if (num < 0.5) {
-    throw new Error("An error occurred while fetching users data");
-  }
+  // let num = Math.random();
+  // console.log("Random number generated:", num);
+  // if (num < 0.5) {
+  //   throw new Error("An error occurred while fetching users data");
+  // }
 
   // Simulating a delay to mimic data fetching or processing
-  await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Data fetched successfully");
-    }, 1000);
-  });
+  // await new Promise((resolve) => {
+  //   setTimeout(() => {
+  //     resolve("Data fetched successfully");
+  //   }, 1000);
+  // });
 
   return (
     <div className="">
