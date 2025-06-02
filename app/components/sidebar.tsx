@@ -25,7 +25,7 @@ export default function Sidebar() {
       </div>
 
       <div
-        className={`min-sm:hidden absolute top-0 right-0 z-1 bg-gray-950 w-full h-screen ${
+        className={`min-sm:hidden fixed top-0 right-0 z-1 bg-gray-950 w-full h-screen ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } transform transition-transform duration-300`}
       >
