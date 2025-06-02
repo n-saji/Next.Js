@@ -2,10 +2,13 @@
 import Image from "next/image";
 import hamburgerIcon from "../asset/icons/hamburger.png";
 import Cross from "../asset/icons/cross.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LinkToPage from "./Link";
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
   return (
     <>
       <div className="hidden max-sm:flex px-2">
@@ -23,8 +26,8 @@ export default function Sidebar() {
 
       <div
         className={`min-sm:hidden absolute top-0 right-0 z-1 bg-gray-950 w-full h-screen ${
-          isOpen ? "opacity-100" : "opacity-0"
-        } transition-opacity duration-300`}
+          isOpen ? "translate-x-0" : "translate-x-full"
+        } transform transition-transform duration-300`}
       >
         <LinkToPage
           classname="flex flex-col space-y-12 text-amber-50 h-svh w-full p-16
