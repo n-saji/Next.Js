@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +37,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-gray-950`}
       >
         <div className="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-900">
-          <main className="flex-grow">{children}</main>
+          <main className="flex-grow">{children}
+          <Analytics />
+          </main>
           <footer className="bg-gray-800 text-white p-1 text-center">
             © 2025 Nikhil Saji
           </footer>
