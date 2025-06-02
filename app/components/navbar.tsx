@@ -1,4 +1,7 @@
 import Link from "next/link";
+import Sidebar from "./sidebar";
+import LinkToPage from "./Link";
+
 export default function Navbar() {
   return (
     <nav className="sticky top-0 dark:bg-gray-950 shadow-md z-50 w-full dark:shadow-gray-800">
@@ -6,17 +9,8 @@ export default function Navbar() {
         <Link href="/" className="text-3xl text-blue-600 font-extrabold">
           Next App
         </Link>
-        <div className="flex space-x-6 font-medium text-gray-300">
-          <Link href="/users" className="hover:text-blue-500">
-            Users
-          </Link>
-          <Link href="/input" className="hover:text-blue-500">
-            Input
-          </Link>
-          <Link href="/styling" className="hover:text-blue-500">
-            Styling
-          </Link>
-        </div>
+        <LinkToPage classname="flex space-x-6 font-medium text-gray-300 max-sm:hidden" />
+        <Sidebar />
       </div>
     </nav>
   );
