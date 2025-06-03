@@ -34,7 +34,7 @@ export default async function Users() {
           Users Page
         </h1>
         <p className="text-lg dark:text-gray-200">This is the users page.</p>
-        <div className="grid grid-cols-4 md:grid-cols-3 lg:grid-cols-2 gap-4 mt-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
           {UsersData.map((user) => (
             <div
               key={user.id}

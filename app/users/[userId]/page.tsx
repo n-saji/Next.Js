@@ -30,10 +30,10 @@ export default async function ShowUsersData({ params }: Props) {
             className={`flex flex-col items-center justify-center  w-full ${BodyPadding}`}
             key={user.id}
           >
-            <h1 className="text-2xl font-bold dark:text-gray-100">
+            <h1 className="text-2xl font-bold dark:text-gray-100 p-4">
               User ID: {user.id}
             </h1>
-            <p className="text-lg dark:text-gray-200  ">
+            <p className="text-lg dark:text-gray-200  text-center p-1/2">
               This is the user data page for user: {user.name}
             </p>
             <ClickButton
