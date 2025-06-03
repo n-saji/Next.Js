@@ -9,12 +9,34 @@ export function ClickButton({
     redirect?: string;
     styling?: string | undefined;
     alertMessage?: string | undefined;
+    action?: string | undefined;
+    id?: number | undefined;
   };
 }) {
   const router = useRouter();
 
   const handleClick = () => {
     alert(props.alertMessage || "Button clicked!");
+    if (props.action) {
+      switch (props.action) {
+        case "delete": {
+          fetch(`/users/${props.id}/api`, {
+            method: "DELETE",
+          })
+            .then((response) => {
+              if (response.ok) {
+                alert("User deleted successfully!");
+              } else {
+                alert("Failed to delete user.");
+              }
+            })
+            .catch((error) => {
+              console.error("Error deleting user:", error);
+              alert("An error occurred while deleting the user.");
+            });
+        }
+      }
+    }
     if (props.redirect) {
       router.push(props.redirect);
     }

@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Navbar from "../components/navbar";
 import { BodyPadding } from "../Global/Styling";
+import { UsersData } from "../data/data";
 
 export const metadata = {
   title: "Users Page",
@@ -34,12 +35,12 @@ export default async function Users() {
         </h1>
         <p className="text-lg dark:text-gray-200">This is the users page.</p>
         <div className="grid grid-cols-4 md:grid-cols-3 lg:grid-cols-2 gap-4 mt-6">
-          {Array.from({ length: 10 }, (_, i) => (
+          {UsersData.map((user) => (
             <div
-              key={i}
+              key={user.id}
               className="text-sm dark:text-gray-300 mb-2 hover:text-blue-500"
             >
-              <Link href={`/users/${i + 1}`}>User {i + 1} </Link>
+              <Link href={`/users/${user.id}`}>User {user.id} </Link>
             </div>
           ))}
         </div>
