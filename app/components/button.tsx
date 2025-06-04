@@ -15,12 +15,12 @@ export function ClickButton({
 }) {
   const router = useRouter();
 
-  const handleClick = () => {
+  const handleClick = async () => {
     alert(props.alertMessage || "Button clicked!");
     if (props.action) {
       switch (props.action) {
         case "delete": {
-          fetch(`/users/${props.id}/api`, {
+          await fetch(`/users/${props.id}/api`, {
             method: "DELETE",
           })
             .then((response) => {
